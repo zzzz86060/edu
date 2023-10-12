@@ -1,4 +1,4 @@
-package com.zz.base;
+package com.zz.constant;
 
 import lombok.Data;
 

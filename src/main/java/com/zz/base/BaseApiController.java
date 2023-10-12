@@ -1,6 +1,7 @@
 package com.zz.base;
 
 
+import com.zz.constant.ApiConstants;
 import lombok.Data;
 
 @Data

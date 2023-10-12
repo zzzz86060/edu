@@ -1,4 +1,4 @@
-package com.zz.Exception;
+package com.zz.core.Exception;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;

@@ -14,7 +14,7 @@ import javax.swing.text.html.parser.Entity;
  * @author zz
  * @since 2023-10-11
  */
-@Mapper
+
 public interface EduCourseClassMapper extends BaseMapper<EduCourseClass> {
 
 }

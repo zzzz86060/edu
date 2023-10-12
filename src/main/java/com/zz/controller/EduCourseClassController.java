@@ -1,6 +1,8 @@
 package com.zz.controller;
 
 
+import com.zz.constant.Constants;
+import com.zz.core.cache.LocalCache;
 import com.zz.entity.EduCourseClass;
 import com.zz.service.IEduCourseClassService;
 import io.swagger.annotations.ApiOperation;
@@ -11,6 +13,7 @@ import com.zz.base.*;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -32,7 +35,8 @@ public class EduCourseClassController extends BaseApiController {
     @ApiOperation(value = "查询所有课程分类", notes = "查询所有课程分类")
     @ResponseBody
     public BaseResponse getAllCourseClass() {
-        List<EduCourseClass> allCourseClass = iEduCourseClassService.getAllCourseClass();
+        List<EduCourseClass> allCourseClass = new ArrayList<>();
+      allCourseClass = LocalCache.get(Constants.COURSE_ALLCOURSECLASSLIST,allCourseClass);
         return setResultSuccessData(allCourseClass);
     }
 }
