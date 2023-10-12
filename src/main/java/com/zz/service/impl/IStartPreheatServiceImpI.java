@@ -1,7 +1,9 @@
 package com.zz.service.impl;
 
+import cn.hutool.core.bean.BeanUtil;
 import com.zz.constant.Constants;
 import com.zz.core.cache.LocalCache;
+import com.zz.dtoresp.EduCourseClassRespDTO;
 import com.zz.entity.EduCourseClass;
 import com.zz.service.IEduCourseClassService;
 import com.zz.service.IStartPreheatService;
@@ -32,6 +34,7 @@ public class IStartPreheatServiceImpI implements IStartPreheatService {
     }
     public void initCourse(){
         List<EduCourseClass> allCourseClassList = iEduCourseClassService.getAllCourseClass();
-        LocalCache.put(Constants.COURSE_ALLCOURSECLASSLIST,allCourseClassList);
+        List<EduCourseClassRespDTO> alleduCourseClassRespDTOS = BeanUtil.copyToList(allCourseClassList,EduCourseClassRespDTO.class);
+        LocalCache.put(Constants.COURSE_ALLCOURSECLASSLIST,alleduCourseClassRespDTOS);
     }
 }
