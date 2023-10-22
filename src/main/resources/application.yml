@@ -13,3 +13,11 @@ logging:
   level:
     ###打印mybatis日志
     com.zz.mapper: debug
+
+zz:
+  userName: zz
+  thread:
+    corePoolSize: 8 # 一直正在运行线程数 2  IO相关 cpu核数*2 cpu相
+    maxPoolSize: 8
+    queueCapacity: 1000
+    keepAlive: 60

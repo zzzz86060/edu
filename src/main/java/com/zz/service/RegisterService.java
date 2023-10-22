@@ -1,5 +1,12 @@
-package com.zz.service;/**
- * @ClassName RegisterService
+package com.zz.service;
+
+import com.zz.dtoresp.req.EduUserReqDTO;
+
+/**
  * @author zz
- */public interface RegisterService {
+ * @ClassName RegisterService
+ */
+public interface RegisterService {
+    boolean register(EduUserReqDTO
+                            eduUserReqDTO);
 }

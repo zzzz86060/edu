@@ -8,4 +8,6 @@ public interface Constants {
      */
     String COURSE_ALLCOURSECLASSLIST = "allCourseClassList";
     String COURSE_EDUCOURSERESPLIST = " eduCourseRespDtoList";
+    Integer DEFAULT_PAGE_SIZE = 1;
+    Integer DB_INSERT_RESULT_BIGZERO = 0;
 }

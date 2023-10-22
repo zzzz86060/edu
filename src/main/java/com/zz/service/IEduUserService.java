@@ -12,5 +12,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2023-10-18
  */
 public interface IEduUserService extends IService<EduUser> {
-
+     EduUser findByUserNameEduUser(String userName);
+    EduUser getByUserId(Integer userId);
 }

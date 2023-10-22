@@ -28,4 +28,12 @@ public class EduUserServiceImpl extends ServiceImpl<EduUserMapper, EduUser> impl
         return eduUser;
     }
 
+    @Override
+    public EduUser getByUserId(Integer userId) {
+        LambdaQueryWrapper<EduUser> eduUserLambdaQueryWrapper = new LambdaQueryWrapper<>();
+        eduUserLambdaQueryWrapper.eq(EduUser::getUserId,userId);
+        EduUser eduUser = eduUserMapper.selectOne(eduUserLambdaQueryWrapper);
+        return eduUser;
+    }
+
 }
