@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @MapperScan("com.zz.mapper")
 @EnableAsync
 public class AppEdu {
-    public static void main(String[] args) {
-        SpringApplication.run(AppEdu.class,args);
-    }
+        public static void main(String[] args) {
+            SpringApplication.run(AppEdu.class,args);
+        }
 }

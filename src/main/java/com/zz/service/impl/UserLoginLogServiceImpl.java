@@ -31,11 +31,10 @@ public class UserLoginLogServiceImpl extends ServiceImpl<UserLoginLogMapper, Use
      public void addUserLoginLog(UserLoginLog userLoginLog) {
         try {
             Thread.sleep(3000);
-            log.info("22");
+            int insertResult = userLoginLogMapper.insert(userLoginLog);
+            log.info("[插入数据：insertResult:{}]", insertResult);
         } catch (Exception e) {
 
         }
-//        int insertResult = userLoginLogMapper.insert(userLoginLog);
-//        log.info("[插入数据：insertResult:{}]", insertResult);
     }
 }

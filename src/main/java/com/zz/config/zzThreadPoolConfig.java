@@ -48,7 +48,7 @@ public class zzThreadPoolConfig {
         threadPoolTaskExecutor.setMaxPoolSize(maxPoolSize);
         threadPoolTaskExecutor.setQueueCapacity(queueCapacity);
         threadPoolTaskExecutor.setKeepAliveSeconds(keepAlive);
-        threadPoolTaskExecutor.setThreadNamePrefix("zzThread-");
+        threadPoolTaskExecutor.setThreadNamePrefix("Thread-");
         //设置拒绝策略 当线程数达到最大时，如何处理新任务
         //CallerRunsPolicy 不由线程池中线程执行，由调用者所在线程执行
         threadPoolTaskExecutor.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());
