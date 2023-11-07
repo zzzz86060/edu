@@ -160,7 +160,7 @@
 
                 axios({
                     method: "POST",
-                    url: "http://127.0.0.1/api/login",
+                    url: "http://localhost/api/login",
                     data: registerAssociationData,
                     withCredentials: true,
                     headers: {
@@ -168,7 +168,7 @@
                     }
                 }).then(resp => {
                     var respCode = resp.data.code;
-                    if (respCode !== 200) {
+                    if (respCode != 200) {
                         _this.getNewImgCaptchaUrl();
                         _this.numberErrorStr = resp.data.msg;
                         return;

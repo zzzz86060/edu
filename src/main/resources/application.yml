@@ -1,5 +1,7 @@
 server:
   port: 9098
+  servlet:
+    context-path: /api
 spring:
   application:
     ###服务的名称
