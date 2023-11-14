@@ -13,4 +13,5 @@ public class LoginReqDto {
      * 用户密码
      */
     String password;
+    String imgCaptcha;
 }

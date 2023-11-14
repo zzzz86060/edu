@@ -20,7 +20,7 @@ public class AutoRunWeb {
     void applicationReadyEvent() {
         System.out.println("应用已经准备就绪 ... 启动浏览器");
         // 需要启动的url（appPort是端口号， "/main"是接口）
-        String url = "http://localhost:" + appPort + "/main";
+        String url = "http://localhost/login.html";
         Runtime runtime = Runtime.getRuntime();
         try {
             // rundll32 url.dll,FileProtocolHandler是Windows系统下用来打开默认浏览器并访问指定URL的命令

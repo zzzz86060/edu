@@ -1,6 +1,7 @@
 package com.zz.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.zz.entity.EduCourse;
 import com.zz.entity.EduUser;
 import com.zz.mapper.EduUserMapper;
 import com.zz.service.IEduUserService;

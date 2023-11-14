@@ -1,6 +1,8 @@
 package com.zz.controller;
 
+import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
+import com.wf.captcha.utils.CaptchaUtil;
 import com.zz.base.*;
 import com.zz.dtoresp.req.LoginReqDto;
 import com.zz.entity.EduUser;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -35,11 +38,21 @@ public class LoginController extends BaseApiController {
 
     @ApiOperation(value = "登录", notes = "登录信息")
     @PostMapping("/login")
-    public BaseResponse login(@RequestBody LoginReqDto loginReqDto) {
+    public BaseResponse login(@RequestBody LoginReqDto loginReqDto
+    , HttpServletRequest request) {
         String userName = loginReqDto.getUserName();
         if (StringUtils.isEmpty(userName)) {
             log.error("[userName is null]");
             return setResultError("userName is null");
+        }
+        String imgCaptcha = loginReqDto.getImgCaptcha();
+        if (StringUtils.isEmpty(imgCaptcha)) {
+            log.error("[imgCaptcha is null]");
+            return setResultError("[imgCaptcha is null]");
+        }
+        if (!CaptchaUtil.ver(imgCaptcha, request)) {
+            CaptchaUtil.clear(request);  // 清除session中的验证码
+            return setResultError("[imgCaptcha is error]");
         }
         // 查询用户信息
         EduUser dbEduUser = eduUserService.findByUserNameEduUser(userName);
