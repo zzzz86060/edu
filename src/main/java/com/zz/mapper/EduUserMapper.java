@@ -2,6 +2,7 @@ package com.zz.mapper;
 
 import com.zz.entity.EduUser;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Select;
 
 /**
  * <p>

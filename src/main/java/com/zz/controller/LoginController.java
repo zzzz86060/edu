@@ -45,6 +45,11 @@ public class LoginController extends BaseApiController {
             log.error("[userName is null]");
             return setResultError("userName is null");
         }
+        String password = loginReqDto.getPassword();
+        if (StringUtils.isEmpty(password)) {
+            log.error("[password is null]");
+            return setResultError("[password is null]");
+        }
         String imgCaptcha = loginReqDto.getImgCaptcha();
         if (StringUtils.isEmpty(imgCaptcha)) {
             log.error("[imgCaptcha is null]");
@@ -54,6 +59,7 @@ public class LoginController extends BaseApiController {
             CaptchaUtil.clear(request);  // 清除session中的验证码
             return setResultError("[imgCaptcha is error]");
         }
+
         // 查询用户信息
         EduUser dbEduUser = eduUserService.findByUserNameEduUser(userName);
         if (dbEduUser == null) {
